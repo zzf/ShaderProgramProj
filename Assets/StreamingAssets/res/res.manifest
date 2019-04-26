@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 2313247050
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: assets/resources/res/luaframework_res.bundle
+      Dependencies: {}
+    Info_1:
+      Name: assets/resources/res/ngui_res.bundle
+      Dependencies: {}

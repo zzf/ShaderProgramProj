@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: 43a5a9a049d0c4e27903ff0df684627e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone_ArmEndL
+    100002: Bone_ArmEndR
+    100004: Bone_ArmL
+    100006: Bone_ArmR
+    100008: Bone_ClavL
+    100010: Bone_ClavR
+    100012: Bone_Fingers01L
+    100014: Bone_Fingers01R
+    100016: Bone_FingersBaseL
+    100018: Bone_FingersBaseR
+    100020: Bone_FingersEndL
+    100022: Bone_FingersEndR
+    100024: Bone_FootArchL
+    100026: Bone_FootArchR
+    100028: Bone_FootEndL
+    100030: Bone_FootEndR
+    100032: Bone_FootToeL
+    100034: Bone_FootToeR
+    100036: Bone_ForeArmL
+    100038: Bone_ForeArmR
+    100040: Bone_Head
+    100042: Bone_HeadEnd
+    100044: Bone_HeelEndL
+    100046: Bone_HeelEndR
+    100048: Bone_HeelL
+    100050: Bone_HeelR
+    100052: Bone_Hip
+    100054: Bone_HipEnd
+    100056: Bone_LegEndL
+    100058: Bone_LegEndR
+    100060: Bone_LegLowL
+    100062: Bone_LegLowR
+    100064: Bone_LegThighL
+    100066: Bone_LegThighR
+    100068: Bone_Neck
+    100070: Bone_PelvisL
+    100072: Bone_PelvisR
+    100074: Bone_Pointer01L
+    100076: Bone_Pointer01R
+    100078: Bone_PointerBaseL
+    100080: Bone_PointerBaseR
+    100082: Bone_PointerEndL
+    100084: Bone_PointerEndR
+    100086: Bone_Spine01
+    100088: Bone_Spine02
+    100090: Bone_SpineEnd
+    100092: Bone_Thumb01L
+    100094: Bone_Thumb01R
+    100096: Bone_ThumbBaseL
+    100098: Bone_ThumbBaseR
+    100100: Bone_ThumbEndL
+    100102: Bone_ThumbEndR
+    100104: COM
+    100106: Controller_ArmL
+    100108: Controller_Armor_Cod
+    100110: Controller_ArmR
+    100112: Controller_Character
+    100114: Controller_ClavL
+    100116: Controller_ClavR
+    100118: Controller_HandL
+    100120: Controller_HandR
+    100122: Controller_Head
+    100124: Controller_Hips
+    100126: Controller_LegL
+    100128: Controller_LegR
+    100130: Controller_ToeL
+    100132: Controller_ToeR
+    100134: Helper_ArmSwivelL
+    100136: Helper_ArmSwivelR
+    100138: Helper_LegSwivelL
+    100140: Helper_LegSwivelR
+    100142: Helper_Shield
+    100144: Helper_Weapon
+    100146: IK Chain01
+    100148: IK Chain02
+    100150: IK Chain03
+    100152: IK Chain04
+    100154: Mesh_Orc_Soldier
+    100156: Mesh_Orc_Soldier_Armor_Cod
+    100158: Mesh_Orc_Soldier_Armor_KneeL
+    100160: Mesh_Orc_Soldier_Armor_KneeR
+    100162: Mesh_Orc_Soldier_Armor_ShoulderL
+    100164: Mesh_Orc_Soldier_Armor_ShoulderR
+    100166: Mesh_Orc_Soldier_Armor_StrapL
+    100168: Mesh_Orc_Soldier_Armor_StrapR
+    100170: Mesh_Orc_Soldier_Cleaver
+    100172: Mesh_Orc_Soldier_Helmet
+    100174: Mesh_Orc_Soldier_Shield
+    100176: Mount_Weapon
+    100178: //RootNode
+    400000: Bone_ArmEndL
+    400002: Bone_ArmEndR
+    400004: Bone_ArmL
+    400006: Bone_ArmR
+    400008: Bone_ClavL
+    400010: Bone_ClavR
+    400012: Bone_Fingers01L
+    400014: Bone_Fingers01R
+    400016: Bone_FingersBaseL
+    400018: Bone_FingersBaseR
+    400020: Bone_FingersEndL
+    400022: Bone_FingersEndR
+    400024: Bone_FootArchL
+    400026: Bone_FootArchR
+    400028: Bone_FootEndL
+    400030: Bone_FootEndR
+    400032: Bone_FootToeL
+    400034: Bone_FootToeR
+    400036: Bone_ForeArmL
+    400038: Bone_ForeArmR
+    400040: Bone_Head
+    400042: Bone_HeadEnd
+    400044: Bone_HeelEndL
+    400046: Bone_HeelEndR
+    400048: Bone_HeelL
+    400050: Bone_HeelR
+    400052: Bone_Hip
+    400054: Bone_HipEnd
+    400056: Bone_LegEndL
+    400058: Bone_LegEndR
+    400060: Bone_LegLowL
+    400062: Bone_LegLowR
+    400064: Bone_LegThighL
+    400066: Bone_LegThighR
+    400068: Bone_Neck
+    400070: Bone_PelvisL
+    400072: Bone_PelvisR
+    400074: Bone_Pointer01L
+    400076: Bone_Pointer01R
+    400078: Bone_PointerBaseL
+    400080: Bone_PointerBaseR
+    400082: Bone_PointerEndL
+    400084: Bone_PointerEndR
+    400086: Bone_Spine01
+    400088: Bone_Spine02
+    400090: Bone_SpineEnd
+    400092: Bone_Thumb01L
+    400094: Bone_Thumb01R
+    400096: Bone_ThumbBaseL
+    400098: Bone_ThumbBaseR
+    400100: Bone_ThumbEndL
+    400102: Bone_ThumbEndR
+    400104: COM
+    400106: Controller_ArmL
+    400108: Controller_Armor_Cod
+    400110: Controller_ArmR
+    400112: Controller_Character
+    400114: Controller_ClavL
+    400116: Controller_ClavR
+    400118: Controller_HandL
+    400120: Controller_HandR
+    400122: Controller_Head
+    400124: Controller_Hips
+    400126: Controller_LegL
+    400128: Controller_LegR
+    400130: Controller_ToeL
+    400132: Controller_ToeR
+    400134: Helper_ArmSwivelL
+    400136: Helper_ArmSwivelR
+    400138: Helper_LegSwivelL
+    400140: Helper_LegSwivelR
+    400142: Helper_Shield
+    400144: Helper_Weapon
+    400146: IK Chain01
+    400148: IK Chain02
+    400150: IK Chain03
+    400152: IK Chain04
+    400154: Mesh_Orc_Soldier
+    400156: Mesh_Orc_Soldier_Armor_Cod
+    400158: Mesh_Orc_Soldier_Armor_KneeL
+    400160: Mesh_Orc_Soldier_Armor_KneeR
+    400162: Mesh_Orc_Soldier_Armor_ShoulderL
+    400164: Mesh_Orc_Soldier_Armor_ShoulderR
+    400166: Mesh_Orc_Soldier_Armor_StrapL
+    400168: Mesh_Orc_Soldier_Armor_StrapR
+    400170: Mesh_Orc_Soldier_Cleaver
+    400172: Mesh_Orc_Soldier_Helmet
+    400174: Mesh_Orc_Soldier_Shield
+    400176: Mount_Weapon
+    400178: //RootNode
+    2300000: Mesh_Orc_Soldier_Armor_Cod
+    2300002: Mesh_Orc_Soldier_Armor_KneeL
+    2300004: Mesh_Orc_Soldier_Armor_KneeR
+    2300006: Mesh_Orc_Soldier_Armor_ShoulderL
+    2300008: Mesh_Orc_Soldier_Armor_ShoulderR
+    2300010: Mesh_Orc_Soldier_Armor_StrapL
+    2300012: Mesh_Orc_Soldier_Armor_StrapR
+    2300014: Mesh_Orc_Soldier_Cleaver
+    2300016: Mesh_Orc_Soldier_Helmet
+    2300018: Mesh_Orc_Soldier_Shield
+    3300000: Mesh_Orc_Soldier_Armor_Cod
+    3300002: Mesh_Orc_Soldier_Armor_KneeL
+    3300004: Mesh_Orc_Soldier_Armor_KneeR
+    3300006: Mesh_Orc_Soldier_Armor_ShoulderL
+    3300008: Mesh_Orc_Soldier_Armor_ShoulderR
+    3300010: Mesh_Orc_Soldier_Armor_StrapL
+    3300012: Mesh_Orc_Soldier_Armor_StrapR
+    3300014: Mesh_Orc_Soldier_Cleaver
+    3300016: Mesh_Orc_Soldier_Helmet
+    3300018: Mesh_Orc_Soldier_Shield
+    4300000: Mesh_Orc_Soldier_Helmet
+    4300002: Mesh_Orc_Soldier_Shield
+    4300004: Mesh_Orc_Soldier_Cleaver
+    4300006: Mesh_Orc_Soldier_Armor_ShoulderR
+    4300008: Mesh_Orc_Soldier_Armor_StrapR
+    4300010: Mesh_Orc_Soldier_Armor_ShoulderL
+    4300012: Mesh_Orc_Soldier_Armor_StrapL
+    4300014: Mesh_Orc_Soldier_Armor_KneeR
+    4300016: Mesh_Orc_Soldier_Armor_KneeL
+    4300018: Mesh_Orc_Soldier_Armor_Cod
+    4300020: Mesh_Orc_Soldier
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Mesh_Orc_Soldier
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
