@@ -429,6 +429,11 @@
     <Compile Include="Assets\QianMo's Toolkit v1.0\ShowUI.cs" />
     <Compile Include="Assets\RunScript.cs" />
     <Compile Include="Assets\Script.cs" />
+    <Compile Include="Assets\Script\csharp\Class1.cs" />
+    <Compile Include="Assets\Script\csharp\Config\ConfigItem.cs" />
+    <Compile Include="Assets\Script\csharp\GenericTypeTest.cs" />
+    <Compile Include="Assets\Script\csharp\InterfaceTest.cs" />
+    <Compile Include="Assets\Script\csharp\TestScript.cs" />
     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
