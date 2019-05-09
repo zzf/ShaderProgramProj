@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\AssetBundle\Editor\BuildMenu.cs" />
     <Compile Include="Assets\Editor\Test.cs" />
+    <Compile Include="Assets\Editor\Tools\ExportPackages.cs" />
     <Compile Include="Assets\LuaFramework\Editor\CustomSettings.cs" />
     <Compile Include="Assets\LuaFramework\Editor\Packager.cs" />
     <Compile Include="Assets\LuaFramework\Examples\Editor\WelcomeScreen.cs" />

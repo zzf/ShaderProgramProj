@@ -8,13 +8,15 @@ namespace LuaFramework {
         private LuaLoader loader;
         private LuaLooper loop = null;
 
+        //C# 使用Lua，创建Lua虚拟机->绑定数据->调用Lua代码
         // Use this for initialization
         void Awake() {
             loader = new LuaLoader();
+            //创建lua虚拟机
             lua = new LuaState();
             this.OpenLibs();
             lua.LuaSetTop(0);
-
+            //绑定C#的方法
             LuaBinder.Bind(lua);
             DelegateFactory.Init();
             LuaCoroutine.Register(lua, this);
