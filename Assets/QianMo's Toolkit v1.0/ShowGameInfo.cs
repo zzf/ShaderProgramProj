@@ -103,7 +103,6 @@ public class ShowGameInfo : MonoBehaviour
             if (buttonEscClicked)
             {
                 //解锁鼠标、显示光标
-                // Screen.lockCursor = false;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 //显示退出对话框
@@ -119,7 +118,6 @@ public class ShowGameInfo : MonoBehaviour
                     //置ESC键标识为false
                     buttonEscClicked = false;
                     //恢复显示图标
-                    //Screen.lockCursor = true;
                     Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = false;
                 }
