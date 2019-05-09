@@ -4,3 +4,5 @@ Library
 obj
 Temp
 threepackage_res
+obj/Debug/Assembly-CSharp.dll
+obj/Debug/Assembly-CSharp.pdb
