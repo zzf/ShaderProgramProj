@@ -105,6 +105,7 @@
     <Compile Include="Assets\LuaFramework\Scripts\Utility\Util.cs" />
     <Compile Include="Assets\LuaFramework\Scripts\Utility\WrapGrid.cs" />
     <Compile Include="Assets\LuaFramework\Scripts\View\AppView.cs" />
+    <Compile Include="Assets\LuaFramework\TestToLuaC#\TestToLuaC.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\BaseType\LuaInterface_EventObjectWrap.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\BaseType\LuaInterface_LuaConstructorWrap.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\BaseType\LuaInterface_LuaFieldWrap.cs" />
@@ -433,6 +434,7 @@
     <Compile Include="Assets\Script\csharp\Config\ConfigItem.cs" />
     <Compile Include="Assets\Script\csharp\GenericTypeTest.cs" />
     <Compile Include="Assets\Script\csharp\InterfaceTest.cs" />
+    <Compile Include="Assets\Script\csharp\ShallowDeepCopyTest.cs" />
     <Compile Include="Assets\Script\csharp\TestScript.cs" />
     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />
