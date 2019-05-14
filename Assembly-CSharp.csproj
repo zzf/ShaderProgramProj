@@ -435,6 +435,8 @@
     <Compile Include="Assets\Script\csharp\GenericTypeTest.cs" />
     <Compile Include="Assets\Script\csharp\InterfaceTest.cs" />
     <Compile Include="Assets\Script\csharp\ShallowDeepCopyTest.cs" />
+    <Compile Include="Assets\Script\csharp\Test\TestCNullLuaNil.cs" />
+    <Compile Include="Assets\Script\csharp\Test\TestNull.cs" />
     <Compile Include="Assets\Script\csharp\TestScript.cs" />
     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />

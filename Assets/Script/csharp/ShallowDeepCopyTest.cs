@@ -57,7 +57,7 @@ public class Team : ICloneable
             sb.AppendFormat("{0}\r\n", mi.ToString());
         }
 
-        GameLogger.LogFormat("Team String : {0}", sb.ToString());
+        //GameLogger.LogFormat("Team String :\r\n {0}", sb.ToString());
 
         return sb.ToString();
     }
@@ -96,6 +96,7 @@ public class ShallowDeepCopyTest : MonoBehaviour {
         GameLogger.Log(Environment.NewLine);
         team.m_mems[0].m_nickname = "PM";
         team.m_mems[0].m_age = 30;
+        GameLogger.Log("modify team.m_mems[0] " + team.m_mems[0].ToString());
 
         // Display the original team.
         GameLogger.Log("Original Team:");
