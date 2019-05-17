@@ -27,6 +27,8 @@ public class TestCNullLuaNil : MonoBehaviour {
         StartCoroutine(DelayCall1());
 
         StartCoroutine(DelayCall2());
+
+        StartCoroutine(DelayCall3());
     }
 
     void Test_01()
@@ -54,6 +56,24 @@ public class TestCNullLuaNil : MonoBehaviour {
         LuaFunction luafunc = m_luastate.GetFunction("TestValue3");
         luafunc.Call();
     }
+
+    void Test04()
+    {
+        LuaFunction luafunc = m_luastate.GetFunction("TestValue4");
+        object[] objs = luafunc.Invoke<object[]>();
+        if(objs.Length > 0)
+        {
+            GameLogger.LogGreen("objs.Length = " + objs.Length.ToString());
+            var data = objs[0];
+            data = objs[1];
+            data = objs[objs.Length - 1];
+            var child = ((LuaTable)data)[1];
+            child = ((LuaTable)data)[2];
+            GameLogger.LogGreen("-------------");
+            //GameLogger.LogGreen("objs[0] = " + ((int)(objs[0])).ToString());
+            //GameLogger.LogGreen("objs[end] = " + (int)(objs[objs.Length-1]));
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -70,5 +90,11 @@ public class TestCNullLuaNil : MonoBehaviour {
     {
         yield return new WaitForSeconds(3);
         Test03();
+    }
+
+    private IEnumerator DelayCall3()
+    {
+        yield return new WaitForSeconds(4);
+        Test04();
     }
 }

@@ -44,3 +44,8 @@ function TestValue3()
     print("lua_obj3:Equal(nil) : " .. tostring(lua_obj3:Equals(nil)))
     print("lua_obj3:Equal(null) : " .. tostring(lua_obj3:Equals(null)))
 end
+
+function TestValue4()
+    local tt = {0, "data", 2, 3, 4, {"child01", 1}}
+    return tt
+end
