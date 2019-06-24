@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2aea04f4-ec1f-4f40-935a-11cab7483e15" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestToLuaC/TestLuaNil.lua" beforeDir="false" afterPath="$PROJECT_DIR$/TestToLuaC/TestLuaNil.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scripts/Manager/LuaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts/Manager/LuaManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Script/csharp/Test/TestCNullLuaNil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Script/csharp/Test/TestCNullLuaNil.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Script/csharp/TestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Script/csharp/TestScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
-    </list>
+    <list default="true" id="2aea04f4-ec1f-4f40-935a-11cab7483e15" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TestToLuaC/TestLuaNil.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="751">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="631">
+              <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -80,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/TestToLuaC/TestToLuaC.lua">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="28" selection-start-column="28" selection-end-column="28" />
+              <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -234,12 +221,12 @@
       <workItem from="1560937216556" duration="197000" />
       <workItem from="1561002149811" duration="3345000" />
       <workItem from="1561079494746" duration="7764000" />
-      <workItem from="1561339771473" duration="1611000" />
+      <workItem from="1561339771473" duration="5415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41471000" />
+    <option name="totallyTimeSpent" value="45275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -292,14 +279,14 @@
     <entry file="file://$PROJECT_DIR$/TestToLuaC/TestToLuaC.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
+          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestToLuaC/TestLuaNil.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="631">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
         </state>
       </provider>
     </entry>
