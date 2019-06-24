@@ -131,5 +131,17 @@ namespace LuaFramework {
             lua = null;
             loader = null;
         }
+
+        public LuaState GetState()
+        {
+            return lua;
+        }
+
+        public LuaTable CreateLuaTable(int narr = 0, int nec = 0)
+        {
+            lua.LuaCreateTable(narr, nec);
+            LuaTable tab = lua.CheckLuaTable(-1);
+            return tab;
+        }
     }
 }

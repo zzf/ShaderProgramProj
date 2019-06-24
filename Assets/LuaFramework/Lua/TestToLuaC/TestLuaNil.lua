@@ -49,3 +49,18 @@ function TestValue4()
     local tt = {0, "data", 2, 3, 4, {"child01", 1}}
     return tt
 end
+
+function TestTableToLua(tab)
+    print("TestTableToLua")
+    print("----------tab.name = " .. tab.name)
+    print("----------tab.id = " .. tostring(tab.id))
+    if tab.data then
+        for i = 1, #(tab.data) do
+            for j = 1, #(tab.data[i]) do
+                print(string.format("i = %s, j = %s, data = %s", tostring(i), tostring(j), tostring(tab.data[i][j])))
+            end
+        end
+    else
+        print("tab.data = nil")
+    end
+end
