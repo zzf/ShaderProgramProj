@@ -64,3 +64,38 @@ function TestTableToLua(tab)
         print("tab.data = nil")
     end
 end
+
+-- C#不能传递函数到Lua中
+function TestCSharpDelegate(ok_cb)
+    print("TestCSharpDelegate")
+    if ok_cb then
+        print("TestCSharpDelegate 1")
+        ok_cb()
+    end
+end
+
+function TestVector3Operator(trans)
+    print("TestVector3Operator")
+    -- Lua不支持Vector3的这种操作符
+    -- local tmpVec3 = 1000 * trans.localPosition
+    local tmpVec3 = Vector3.New(1000 * trans.localPosition.x, 1000 * trans.localPosition.y, 1000 * trans.localPosition.z)
+    print(string.format("1 tmpVec3.x = %d, y = %d, z = %d", tmpVec3.x, tmpVec3.y, tmpVec3.z))
+    tmpVec3 = tmpVec3 + trans.localPosition
+    print(string.format("2 tmpVec3.x = %d, y = %d, z = %d", tmpVec3.x, tmpVec3.y, tmpVec3.z))
+
+    local reverse = false
+    print(string.format("1 reverse = %s; not reverse = %s", tostring(reverse), tostring(not reverse)))
+    reverse = nil
+    print(string.format("2 reverse = %s; not reverse = %s", tostring(reverse), tostring(not reverse)))
+
+    local vec1 = Vector3.New(100, 100, 100)
+    local vec2 = Vector3.New(50, 50, 50)
+    local vec3 = vec1 - vec2
+    print()
+
+end
+
+function TestCSharpDefaultParams()
+    print("TestCSharpDefaultParams")
+    CSharpLuaTest.CommonTransfer.SetPlayerInfo(1, 2, "zzf")
+end

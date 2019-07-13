@@ -96,6 +96,9 @@ public static class LuaBinder
 		LuaFramework_NetworkManagerWrap.Register(L);
 		LuaFramework_ResourceManagerWrap.Register(L);
 		L.EndModule();
+		L.BeginModule("CSharpLuaTest");
+		CSharpLuaTest_CommonTransferWrap.Register(L);
+		L.EndModule();
 		L.BeginModule("System");
 		L.RegFunction("Action", System_Action);
 		L.RegFunction("Predicate_int", System_Predicate_int);

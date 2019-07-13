@@ -67,6 +67,11 @@ public class TestNull : MonoBehaviour {
         }        
     }
 
+    void TestNull_03()
+    {
+
+    }
+
     // Update is called once per frame
     void Update () {
 		

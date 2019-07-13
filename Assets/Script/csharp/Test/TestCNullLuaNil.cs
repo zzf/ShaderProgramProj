@@ -4,10 +4,13 @@ using UnityEngine;
 using LuaFramework;
 using LuaInterface;
 using System.IO;
+using System;
+using UnityEditor;
 
 public class TestCNullLuaNil : Base {
 
     private LuaState m_luastate = null;
+
 	// Use this for initialization
 	void Start () {
         m_luastate = new LuaState();
@@ -21,7 +24,7 @@ public class TestCNullLuaNil : Base {
 
         string luafile = "TestLuaNil";
         m_luastate.DoFile(luafile);
-
+        /*
         Test_01();
 
         StartCoroutine(DelayCall1());
@@ -33,6 +36,53 @@ public class TestCNullLuaNil : Base {
         StartCoroutine(DelayCall5());
 
         StartCoroutine(DelayCall6());
+        
+        StartCoroutine(DelayCall7());
+        */
+
+        StartCoroutine(DelayCall8());
+    }
+
+    private IEnumerator DelayCall1()
+    {
+        yield return new WaitForSeconds(1);
+        Test02();
+    }
+
+    private IEnumerator DelayCall2()
+    {
+        yield return new WaitForSeconds(3);
+        Test03();
+    }
+
+    private IEnumerator DelayCall3()
+    {
+        yield return new WaitForSeconds(4);
+        Test04();
+    }
+
+    private IEnumerator DelayCall5()
+    {
+        yield return new WaitForSeconds(5);
+        Test05();
+    }
+
+    private IEnumerator DelayCall6()
+    {
+        yield return new WaitForSeconds(2);
+        TestTableToLua();
+    }
+
+    private IEnumerator DelayCall7()
+    {
+        yield return new WaitForSeconds(2);
+        TestLuaVector3Operator();
+    }
+
+    private IEnumerator DelayCall8()
+    {
+        yield return new WaitForSeconds(2);
+        TestCSharpParams();
     }
 
     void Test_01()
@@ -53,6 +103,7 @@ public class TestCNullLuaNil : Base {
         luafunc1.Call();
         LuaFunction luafunc2 = m_luastate.GetFunction("TestValue2");
         luafunc2.Call();
+        
     }
 
     void Test03()
@@ -116,6 +167,34 @@ public class TestCNullLuaNil : Base {
         tab["data"] = tab1;
         LuaFunction luaFunc = m_luastate.GetFunction("TestTableToLua");
         luaFunc.Call(tab);
+
+        System.Action<object[]> func1 = delegate (object[] objs)
+        {
+            if(objs.Length == 2)
+            {
+                GameLogger.LogGreen("data  1 = " + System.Convert.ToInt32(objs[0]));
+                GameLogger.LogGreen("data  2 = " + System.Convert.ToString(objs[1]));
+            }
+        };
+
+        System.Action func2 = delegate ()
+        {
+            GameLogger.LogError("--------------");
+        };
+        LuaFunction luaFunc2 = m_luastate.GetFunction("TestCSharpDelegate");
+        luaFunc2.Call(func2);
+    }
+
+    void TestLuaVector3Operator()
+    {
+        LuaFunction lunFunc = m_luastate.GetFunction("TestVector3Operator");
+        lunFunc.Call(gameObject.transform);
+    }
+
+    void TestCSharpParams()
+    {
+        LuaFunction luaFunc = m_luastate.GetFunction("TestCSharpDefaultParams");
+        luaFunc.Call();
     }
 	
 	// Update is called once per frame
@@ -123,33 +202,53 @@ public class TestCNullLuaNil : Base {
         
 	}
 
-    private IEnumerator DelayCall1()
+
+    public static void packageArchive()
     {
-        yield return new WaitForSeconds(1);
-        Test02();
+        using (var w = new StreamWriter(Application.dataPath + "/../bat/run_ntescstool.bat"))
+        {
+            w.Write("python run_cmd.py, args");
+        }
+        //FastOpenTool.RunBat("run_ntescstool.bat");
+    }
+#if UNITY_EDITOR
+    //调用python核心代码
+    [MenuItem("Test/C2PY")]
+    public static void RunPythonScript()
+    {
+        System.Diagnostics.Process p = new System.Diagnostics.Process();
+        //string path = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "/../test.py";// 获得python文件的绝对路径（将文件放在c#的debug文件夹中可以这样操作）
+        string path = Application.dataPath + "/../bat/test.py";//(因为我没放debug下，所以直接写的绝对路径,替换掉上面的路径了)
+        GameLogger.LogGreen("path = " + path);
+        p.StartInfo.FileName = "python";//没有配环境变量的话，可以像我这样写python.exe的绝对路径。如果配了，直接写"python.exe"即可
+        string sArguments = path;
+        p.StartInfo.Arguments = sArguments;
+        p.StartInfo.UseShellExecute = false;
+        p.StartInfo.RedirectStandardOutput = true;
+        p.StartInfo.RedirectStandardInput = true;
+        p.StartInfo.RedirectStandardError = true;
+        p.StartInfo.CreateNoWindow = true;
+        p.Start();
+
+        p.BeginOutputReadLine();
+        p.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler(p_OutputDataReceived);
+        //GameLogger.LogGreen("consolue output = " + Console.ReadLine());
+        p.WaitForExit();
     }
 
-    private IEnumerator DelayCall2()
+    //输出打印的信息
+    static void p_OutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
     {
-        yield return new WaitForSeconds(3);
-        Test03();
+        if (!string.IsNullOrEmpty(e.Data))
+        {
+            AppendText(e.Data + Environment.NewLine);
+        }
     }
+    public static void AppendText(string text)
+    {
+        //Console.WriteLine(text);     //此处在控制台输出.py文件print的结果
+        GameLogger.LogGreen("python console info: " + text);
+    }
+#endif
 
-    private IEnumerator DelayCall3()
-    {
-        yield return new WaitForSeconds(4);
-        Test04();
-    }
-
-    private IEnumerator DelayCall5()
-    {
-        yield return new WaitForSeconds(5);
-        Test05();
-    }
-
-    private IEnumerator DelayCall6()
-    {
-        yield return new WaitForSeconds(2);
-        TestTableToLua();
-    }
 }

@@ -173,6 +173,8 @@ public static class CustomSettings
         _GT(typeof(ThreadManager)),
         _GT(typeof(NetworkManager)),
         _GT(typeof(ResourceManager)),		  
+
+        _GT(typeof(CSharpLuaTest.CommonTransfer)),
     };
 
     public static List<Type> dynamicList = new List<Type>()
