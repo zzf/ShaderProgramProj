@@ -11,7 +11,7 @@ namespace LuaFramework {
         static Queue<KeyValuePair<int, ByteBuffer>> mEvents = new Queue<KeyValuePair<int, ByteBuffer>>();
 
         SocketClient SocketClient {
-            get {
+            get { 
                 if (socket == null)
                     socket = new SocketClient();
                 return socket;                    

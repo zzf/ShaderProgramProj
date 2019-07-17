@@ -65,7 +65,7 @@ namespace CSharpTest
             indexer["key2", 2] = new AnermyInfoItem("key2", 2, "King0202");
             indexer["key2", 3] = new AnermyInfoItem("key2", 3, "King0203");
 
-            BetterList<AnermyInfoItem> arr = indexer["key2"];
+            List<AnermyInfoItem> arr = indexer["key2"];
             foreach(AnermyInfoItem data in arr)
             {
                 Debug.Log(data.AnermyName + Path.DirectorySeparatorChar + data.EnermyLevel.ToString());

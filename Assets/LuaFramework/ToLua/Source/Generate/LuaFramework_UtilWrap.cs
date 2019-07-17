@@ -19,18 +19,20 @@ public class LuaFramework_UtilWrap
 		L.RegFunction("md5file", md5file);
 		L.RegFunction("ClearChild", ClearChild);
 		L.RegFunction("ClearMemory", ClearMemory);
+		L.RegFunction("GetRelativePath", GetRelativePath);
+		L.RegFunction("GetFileText", GetFileText);
 		L.RegFunction("AppContentPath", AppContentPath);
-		L.RegFunction("AddClick", AddClick);
 		L.RegFunction("Log", Log);
 		L.RegFunction("LogWarning", LogWarning);
 		L.RegFunction("LogError", LogError);
-		L.RegFunction("AddComponent", AddComponent);
-		L.RegFunction("LoadPrefab", LoadPrefab);
+		L.RegFunction("CheckRuntimeFile", CheckRuntimeFile);
 		L.RegFunction("CallMethod", CallMethod);
 		L.RegFunction("CheckEnvironment", CheckEnvironment);
 		L.RegFunction("New", _CreateLuaFramework_Util);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("DataPath", get_DataPath, null);
+		L.RegVar("NetAvailable", get_NetAvailable, null);
+		L.RegVar("IsWifi", get_IsWifi, null);
 		L.EndClass();
 	}
 
@@ -294,12 +296,12 @@ public class LuaFramework_UtilWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int AppContentPath(IntPtr L)
+	static int GetRelativePath(IntPtr L)
 	{
 		try
 		{
 			ToLua.CheckArgsCount(L, 0);
-			string o = LuaFramework.Util.AppContentPath();
+			string o = LuaFramework.Util.GetRelativePath();
 			LuaDLL.lua_pushstring(L, o);
 			return 1;
 		}
@@ -310,15 +312,31 @@ public class LuaFramework_UtilWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int AddClick(IntPtr L)
+	static int GetFileText(IntPtr L)
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 2);
-			UnityEngine.GameObject arg0 = (UnityEngine.GameObject)ToLua.CheckObject(L, 1, typeof(UnityEngine.GameObject));
-			object arg1 = ToLua.ToVarObject(L, 2);
-			LuaFramework.Util.AddClick(arg0, arg1);
-			return 0;
+			ToLua.CheckArgsCount(L, 1);
+			string arg0 = ToLua.CheckString(L, 1);
+			string o = LuaFramework.Util.GetFileText(arg0);
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int AppContentPath(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			string o = LuaFramework.Util.AppContentPath();
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
 		}
 		catch (Exception e)
 		{
@@ -375,33 +393,13 @@ public class LuaFramework_UtilWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int AddComponent(IntPtr L)
+	static int CheckRuntimeFile(IntPtr L)
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 3);
-			UnityEngine.GameObject arg0 = (UnityEngine.GameObject)ToLua.CheckObject(L, 1, typeof(UnityEngine.GameObject));
-			string arg1 = ToLua.CheckString(L, 2);
-			string arg2 = ToLua.CheckString(L, 3);
-			UnityEngine.Component o = LuaFramework.Util.AddComponent(arg0, arg1, arg2);
-			ToLua.Push(L, o);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int LoadPrefab(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 1);
-			string arg0 = ToLua.CheckString(L, 1);
-			UnityEngine.GameObject o = LuaFramework.Util.LoadPrefab(arg0);
-			ToLua.PushSealed(L, o);
+			ToLua.CheckArgsCount(L, 0);
+			int o = LuaFramework.Util.CheckRuntimeFile();
+			LuaDLL.lua_pushinteger(L, o);
 			return 1;
 		}
 		catch (Exception e)
@@ -451,6 +449,34 @@ public class LuaFramework_UtilWrap
 		try
 		{
 			LuaDLL.lua_pushstring(L, LuaFramework.Util.DataPath);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_NetAvailable(IntPtr L)
+	{
+		try
+		{
+			LuaDLL.lua_pushboolean(L, LuaFramework.Util.NetAvailable);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_IsWifi(IntPtr L)
+	{
+		try
+		{
+			LuaDLL.lua_pushboolean(L, LuaFramework.Util.IsWifi);
 			return 1;
 		}
 		catch (Exception e)

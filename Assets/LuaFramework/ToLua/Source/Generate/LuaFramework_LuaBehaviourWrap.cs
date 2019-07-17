@@ -6,66 +6,13 @@ public class LuaFramework_LuaBehaviourWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.LuaBehaviour), typeof(Base));
-		L.RegFunction("OnInit", OnInit);
-		L.RegFunction("LoadAsset", LoadAsset);
+		L.BeginClass(typeof(LuaFramework.LuaBehaviour), typeof(View));
 		L.RegFunction("AddClick", AddClick);
 		L.RegFunction("RemoveClick", RemoveClick);
 		L.RegFunction("ClearClick", ClearClick);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.EndClass();
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int OnInit(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
-
-			if (count == 2)
-			{
-				LuaFramework.LuaBehaviour obj = (LuaFramework.LuaBehaviour)ToLua.CheckObject<LuaFramework.LuaBehaviour>(L, 1);
-				UnityEngine.AssetBundle arg0 = (UnityEngine.AssetBundle)ToLua.CheckObject<UnityEngine.AssetBundle>(L, 2);
-				obj.OnInit(arg0);
-				return 0;
-			}
-			else if (count == 3)
-			{
-				LuaFramework.LuaBehaviour obj = (LuaFramework.LuaBehaviour)ToLua.CheckObject<LuaFramework.LuaBehaviour>(L, 1);
-				UnityEngine.AssetBundle arg0 = (UnityEngine.AssetBundle)ToLua.CheckObject<UnityEngine.AssetBundle>(L, 2);
-				string arg1 = ToLua.CheckString(L, 3);
-				obj.OnInit(arg0, arg1);
-				return 0;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: LuaFramework.LuaBehaviour.OnInit");
-			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int LoadAsset(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			LuaFramework.LuaBehaviour obj = (LuaFramework.LuaBehaviour)ToLua.CheckObject<LuaFramework.LuaBehaviour>(L, 1);
-			string arg0 = ToLua.CheckString(L, 2);
-			UnityEngine.GameObject o = obj.LoadAsset(arg0);
-			ToLua.PushSealed(L, o);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

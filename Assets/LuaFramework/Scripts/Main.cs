@@ -2,8 +2,8 @@
 using System.Collections;
 
 namespace LuaFramework {
+
     /// <summary>
-    /// 框架主入口
     /// </summary>
     public class Main : MonoBehaviour {
 

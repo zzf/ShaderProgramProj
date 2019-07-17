@@ -57,13 +57,13 @@ namespace CSharpTest
 
     public class AnermyInfoItemIndexer
     {
-        Dictionary<string, BetterList<AnermyInfoItem>> arr = null;
+        Dictionary<string, List<AnermyInfoItem>> arr = null;
         public AnermyInfoItemIndexer()
         {
-            arr = new Dictionary<string, BetterList<AnermyInfoItem>>();
+            arr = new Dictionary<string, List<AnermyInfoItem>>();
         }
 
-        public BetterList<AnermyInfoItem> this[string key]
+        public List<AnermyInfoItem> this[string key]
         {
             get
             {
@@ -75,7 +75,7 @@ namespace CSharpTest
         {
             get
             {
-                BetterList<AnermyInfoItem> list = null;
+                List<AnermyInfoItem> list = null;
                 if(arr.TryGetValue(key, out list))
                 {
                     foreach (AnermyInfoItem data in list)
@@ -94,7 +94,7 @@ namespace CSharpTest
 
             set
             {
-                BetterList<AnermyInfoItem> list = null;
+                List<AnermyInfoItem> list = null;
                 if(arr.TryGetValue(key, out list))
                 {
                     arr[key].Add(new AnermyInfoItem(key, level, value.AnermyName));
@@ -102,7 +102,7 @@ namespace CSharpTest
                 }
                 else
                 {
-                    arr[key] = new BetterList<AnermyInfoItem>();
+                    arr[key] = new List<AnermyInfoItem>();
                     arr[key].Add(new AnermyInfoItem(key, level, value.AnermyName));
                 }
             }

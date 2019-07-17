@@ -12,8 +12,6 @@ public class LuaFramework_LuaManagerWrap
 		L.RegFunction("CallFunction", CallFunction);
 		L.RegFunction("LuaGC", LuaGC);
 		L.RegFunction("Close", Close);
-		L.RegFunction("GetState", GetState);
-		L.RegFunction("CreateLuaTable", CreateLuaTable);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.EndClass();
@@ -96,65 +94,6 @@ public class LuaFramework_LuaManagerWrap
 			LuaFramework.LuaManager obj = (LuaFramework.LuaManager)ToLua.CheckObject<LuaFramework.LuaManager>(L, 1);
 			obj.Close();
 			return 0;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int GetState(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 1);
-			LuaFramework.LuaManager obj = (LuaFramework.LuaManager)ToLua.CheckObject<LuaFramework.LuaManager>(L, 1);
-			LuaInterface.LuaState o = obj.GetState();
-			ToLua.PushObject(L, o);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int CreateLuaTable(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
-
-			if (count == 1)
-			{
-				LuaFramework.LuaManager obj = (LuaFramework.LuaManager)ToLua.CheckObject<LuaFramework.LuaManager>(L, 1);
-				LuaInterface.LuaTable o = obj.CreateLuaTable();
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else if (count == 2)
-			{
-				LuaFramework.LuaManager obj = (LuaFramework.LuaManager)ToLua.CheckObject<LuaFramework.LuaManager>(L, 1);
-				int arg0 = (int)LuaDLL.luaL_checknumber(L, 2);
-				LuaInterface.LuaTable o = obj.CreateLuaTable(arg0);
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else if (count == 3)
-			{
-				LuaFramework.LuaManager obj = (LuaFramework.LuaManager)ToLua.CheckObject<LuaFramework.LuaManager>(L, 1);
-				int arg0 = (int)LuaDLL.luaL_checknumber(L, 2);
-				int arg1 = (int)LuaDLL.luaL_checknumber(L, 3);
-				LuaInterface.LuaTable o = obj.CreateLuaTable(arg0, arg1);
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: LuaFramework.LuaManager.CreateLuaTable");
-			}
 		}
 		catch (Exception e)
 		{

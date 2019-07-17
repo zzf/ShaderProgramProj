@@ -8,6 +8,15 @@ namespace LuaFramework {
     /// 集成自LuaFileUtils，重写里面的ReadFile，
     /// </summary>
     public class LuaLoader : LuaFileUtils {
+        private ResourceManager m_resMgr;
+
+        ResourceManager resMgr {
+            get { 
+                if (m_resMgr == null)
+                    m_resMgr = AppFacade.Instance.GetManager<ResourceManager>(ManagerName.Resource);
+                return m_resMgr;
+            }
+        }
 
         // Use this for initialization
         public LuaLoader() {
@@ -20,9 +29,12 @@ namespace LuaFramework {
         /// </summary>
         /// <param name="bundle"></param>
         public void AddBundle(string bundleName) {
-            string url = Util.DataPath + bundleName.ToLower(); ;
+            string url = Util.DataPath + bundleName.ToLower();
             if (File.Exists(url)) {
-                AssetBundle bundle = AssetBundle.LoadFromFile(url);
+                var bytes = File.ReadAllBytes(url);
+				// 已注释, CreateFromMemoryImmediate从5.3开始改为LoadFromMemory,需要用的请自行取消注释~
+				// AssetBundle bundle = AssetBundle.CreateFromMemoryImmediate(bytes);
+                AssetBundle bundle = AssetBundle.LoadFromMemory(bytes);
                 if (bundle != null)
                 {
                     bundleName = bundleName.Replace("lua/", "").Replace(".unity3d", "");

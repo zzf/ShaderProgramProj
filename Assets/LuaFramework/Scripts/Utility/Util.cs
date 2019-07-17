@@ -6,8 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using System.Reflection;
 using LuaInterface;
+using LuaFramework;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -15,6 +15,8 @@ using UnityEditor;
 
 namespace LuaFramework {
     public class Util {
+        private static List<string> luaPaths = new List<string>();
+
         public static int Int(object o) {
             return Convert.ToInt32(o);
         }
@@ -192,17 +194,48 @@ namespace LuaFramework {
                 if (Application.isMobilePlatform) {
                     return Application.persistentDataPath + "/" + game + "/";
                 }
-                if (Application.platform == RuntimePlatform.WindowsPlayer) {
-                    return Application.streamingAssetsPath + "/";
-                }
-                if (AppConst.DebugMode && Application.isEditor) {
-                    return Application.streamingAssetsPath + "/";
+                if (AppConst.DebugMode) {
+                    return Application.dataPath + "/" + AppConst.AssetDir + "/";
                 }
                 if (Application.platform == RuntimePlatform.OSXEditor) {
                     int i = Application.dataPath.LastIndexOf('/');
                     return Application.dataPath.Substring(0, i + 1) + game + "/";
                 }
                 return "c:/" + game + "/";
+            }
+        }
+
+        public static string GetRelativePath() {
+            if (Application.isEditor)
+                return "file://" + System.Environment.CurrentDirectory.Replace("\\", "/") + "/Assets/" + AppConst.AssetDir + "/";
+            else if (Application.isMobilePlatform || Application.isConsolePlatform)
+                return "file:///" + DataPath;
+            else // For standalone player.
+                return "file://" + Application.streamingAssetsPath + "/";
+        }
+
+        /// <summary>
+        /// 取得行文本
+        /// </summary>
+        public static string GetFileText(string path) {
+            return File.ReadAllText(path);
+        }
+
+        /// <summary>
+        /// 网络可用
+        /// </summary>
+        public static bool NetAvailable {
+            get {
+                return Application.internetReachability != NetworkReachability.NotReachable;
+            }
+        }
+
+        /// <summary>
+        /// 是否是无线
+        /// </summary>
+        public static bool IsWifi {
+            get {
+                return Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork;
             }
         }
 
@@ -219,20 +252,10 @@ namespace LuaFramework {
                     path = Application.dataPath + "/Raw/";
                 break;
                 default:
-                    path = Application.dataPath + "/StreamingAssets/";
+                    path = Application.dataPath + "/" + AppConst.AssetDir + "/";
                 break;
             }
             return path;
-        }
-
-        /// <summary>
-        /// 添加lua单机事件
-        /// </summary>
-        public static void AddClick(GameObject go, System.Object luafuc) {
-            UIEventListener.Get(go).onClick += delegate(GameObject o) {
-                LuaInterface.LuaFunction func = (LuaInterface.LuaFunction)luafuc;
-                func.Call();
-            };
         }
 
         public static void Log(string str) {
@@ -247,34 +270,11 @@ namespace LuaFramework {
             Debug.LogError(str);
         }
 
-        public static Component AddComponent(GameObject go, string assembly, string classname) {
-            Assembly asmb = Assembly.Load(assembly);
-            Type t = asmb.GetType(assembly + "." + classname);
-            return go.AddComponent(t);
-        }
-
-        /// <summary>
-        /// 载入Prefab
-        /// </summary>
-        /// <param name="name"></param>
-        public static GameObject LoadPrefab(string name) {
-            return Resources.Load(name, typeof(GameObject)) as GameObject;
-        }
-
-        /// <summary>
-        /// 执行Lua方法
-        /// </summary>
-        public static object[] CallMethod(string module, string func, params object[] args) {
-            LuaManager luaMgr = AppFacade.Instance.GetManager<LuaManager>(ManagerName.Lua);
-            if (luaMgr == null) return null;
-            return luaMgr.CallFunction(module + "." + func, args);
-        }
-
         /// <summary>
         /// 防止初学者不按步骤来操作
         /// </summary>
         /// <returns></returns>
-        static int CheckRuntimeFile() {
+        public static int CheckRuntimeFile() {
             if (!Application.isEditor) return 0;
             string streamDir = Application.dataPath + "/StreamingAssets/";
             if (!Directory.Exists(streamDir)) {
@@ -298,6 +298,15 @@ namespace LuaFramework {
         }
 
         /// <summary>
+        /// 执行Lua方法
+        /// </summary>
+        public static object[] CallMethod(string module, string func, params object[] args) {
+            LuaManager luaMgr = AppFacade.Instance.GetManager<LuaManager>(ManagerName.Lua);
+            if (luaMgr == null) return null;
+            return luaMgr.CallFunction(module + "." + func, args);
+        }
+
+                /// <summary>
         /// 检查运行环境
         /// </summary>
         public static bool CheckEnvironment() {
@@ -317,7 +326,7 @@ namespace LuaFramework {
                 EditorApplication.isPlaying = false;
                 return false;
             }
-#endif            
+#endif
             return true;
         }
     }

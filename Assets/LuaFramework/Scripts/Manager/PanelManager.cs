@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using LuaInterface;
 
 namespace LuaFramework {
@@ -22,39 +23,42 @@ namespace LuaFramework {
         /// </summary>
         /// <param name="type"></param>
         public void CreatePanel(string name, LuaFunction func = null) {
-            StartCoroutine(StartCreatePanel(name, func));
-        }
+            string assetName = name + "Panel";
+            string abName = name.ToLower() + AppConst.ExtName;
+            if (Parent.Find(name) != null) return;
 
-        /// <summary>
-        /// �������
-        /// </summary>
-        IEnumerator StartCreatePanel(string name, LuaFunction func = null) {
-            AssetBundle bundle = ResManager.LoadBundle(name);
+#if ASYNC_MODE
+            ResManager.LoadPrefab(abName, assetName, delegate(UnityEngine.Object[] objs) {
+                if (objs.Length == 0) return;
+                GameObject prefab = objs[0] as GameObject;
+                if (prefab == null) return;
 
-            name += "Panel";
-            GameObject prefab = null;
-#if UNITY_5
-            prefab = bundle.LoadAsset(name, typeof(GameObject)) as GameObject;
+                GameObject go = Instantiate(prefab) as GameObject;
+                go.name = assetName;
+                go.layer = LayerMask.NameToLayer("Default");
+                go.transform.SetParent(Parent);
+                go.transform.localScale = Vector3.one;
+                go.transform.localPosition = Vector3.zero;
+                go.AddComponent<LuaBehaviour>();
+
+                if (func != null) func.Call(go);
+                Debug.LogWarning("CreatePanel::>> " + name + " " + prefab);
+            });
 #else
-            prefab = bundle.LoadAsset(name, typeof(GameObject)) as GameObject;
-#endif
-            yield return new WaitForEndOfFrame();
+            GameObject prefab = ResManager.LoadAsset<GameObject>(name, assetName);
+            if (prefab == null) return;
 
-            if (Parent.Find(name) != null || prefab == null) {
-                yield break;
-            }
             GameObject go = Instantiate(prefab) as GameObject;
-            go.name = name;
+            go.name = assetName;
             go.layer = LayerMask.NameToLayer("Default");
-            go.transform.parent = Parent;
+            go.transform.SetParent(Parent);
             go.transform.localScale = Vector3.one;
             go.transform.localPosition = Vector3.zero;
-
-            yield return new WaitForEndOfFrame();
-            go.AddComponent<LuaBehaviour>().OnInit(bundle);
+            go.AddComponent<LuaBehaviour>();
 
             if (func != null) func.Call(go);
-            Debug.Log("StartCreatePanel------>>>>" + name);
+            Debug.LogWarning("CreatePanel::>> " + name + " " + prefab);
+#endif
         }
 
         /// <summary>

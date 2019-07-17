@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_11;UNITY_2018_2;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_11;UNITY_2018_2;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;ASYNC_MODE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -90,89 +90,6 @@
     <Compile Include="Assets\LuaFramework\ToLua\Injection\Editor\ToluaInjectionBlackListPanel.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\Injection\Editor\ToLuaInjectionHelper.cs" />
     <Compile Include="Assets\LuaFramework\ToLua\Injection\Editor\ToLuaText.cs" />
-    <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
-    <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\BMFontReader.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\ComponentSelector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\EventDelegateDrawer.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\EventDelegateEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\FreeType.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUIContextMenu.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUIEditorExtensions.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUIHandles.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUIHelp.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUIJson.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUIMenu.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUISettings.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUISnap.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\PropertyBindingEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\PropertyReferenceDrawer.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\SpriteSelector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenAlphaEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenColorEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenFOVEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenHeightEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenOrthoSizeEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenPositionEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenRotationEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenScaleEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenTransformEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenVolumeEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\TweenWidthEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UI2DSpriteEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIAnchorEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIBasicSpriteEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIButtonColorEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIButtonEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIButtonKeysEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIButtonMessageEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UICameraEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UICameraTool.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIDragObjectEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallViewer.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIEventTriggerEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIFontInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIFontMaker.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIForwardEventsEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIGridEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIInputEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIKeyNavigationEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UILabelInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UILocalizeEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelTool.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIPlayAnimationEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIPlayTweenEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIPrefabTool.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIProgressBarEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIRectEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIRootEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIScrollBarEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIScrollViewEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UISliderEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UISnapshotPointEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIStretchEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UITableEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UITextureInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UITexturePacker.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIToggleInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UITweenerEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
     <Compile Include="Assets\Runtime Transform Gizmos\Editor\EditorCameraInspectorGUI.cs" />
     <Compile Include="Assets\Runtime Transform Gizmos\Editor\EditorGizmoSystemInspectorGUI.cs" />
     <Compile Include="Assets\Runtime Transform Gizmos\Editor\EditorObjectSelectionInspectorGUI.cs" />
@@ -491,9 +408,6 @@
     </Reference>
     <Reference Include="DOTweenProEditor">
       <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenUpgradeManager">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DOTween/Editor/DOTweenUpgradeManager.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
       <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>

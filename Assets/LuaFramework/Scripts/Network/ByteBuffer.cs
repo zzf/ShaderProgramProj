@@ -76,7 +76,7 @@ namespace LuaFramework {
         }
 
         public void WriteBuffer(LuaByteBuffer strBuffer) {
-           WriteBytes(strBuffer.buffer);
+            WriteBytes(strBuffer.buffer);
         }
 
         public byte ReadByte() {

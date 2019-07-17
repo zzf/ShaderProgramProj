@@ -6,6 +6,7 @@ using LuaFramework;
 using UnityEditor;
 
 using BindType = ToLuaMenu.BindType;
+using UnityEngine.UI;
 using System.Reflection;
 
 public static class CustomSettings
@@ -148,18 +149,18 @@ public static class CustomSettings
         _GT(typeof(WrapMode)),
 
         _GT(typeof(QualitySettings)),
-        _GT(typeof(RenderSettings)),                                                   
-        _GT(typeof(BlendWeights)),           
-        _GT(typeof(RenderTexture)),  
-		_GT(typeof(Resources)),
-		_GT(typeof(LuaProfiler)),     
+        _GT(typeof(RenderSettings)),
+        //TODO 目前使用的是2018版，没有这个枚举
+       // _GT(typeof(SkinWeights)),
+        _GT(typeof(RenderTexture)), 
+		_GT(typeof(Resources)),      
+		_GT(typeof(LuaProfiler)),
           
         //for LuaFramework
-        _GT(typeof(UIPanel)),
-        _GT(typeof(UILabel)),
-        _GT(typeof(UIGrid)),
+        _GT(typeof(RectTransform)),
+        _GT(typeof(Text)),
+
         _GT(typeof(Util)),
-        _GT(typeof(WrapGrid)),
         _GT(typeof(AppConst)),
         _GT(typeof(LuaHelper)),
         _GT(typeof(ByteBuffer)),
@@ -173,8 +174,6 @@ public static class CustomSettings
         _GT(typeof(ThreadManager)),
         _GT(typeof(NetworkManager)),
         _GT(typeof(ResourceManager)),		  
-
-        _GT(typeof(CSharpLuaTest.CommonTransfer)),
     };
 
     public static List<Type> dynamicList = new List<Type>()
@@ -195,8 +194,8 @@ public static class CustomSettings
         typeof(Animation),
         typeof(AnimationClip),
         typeof(AnimationState),
-
-        typeof(BlendWeights),
+        //TODO 目前使用的是2018版，没有这个枚举
+       // typeof(SkinWeights),
         typeof(RenderTexture),
         typeof(Rigidbody),
     };

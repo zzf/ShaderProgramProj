@@ -6,6 +6,7 @@ using LuaInterface;
 using System.Reflection;
 using System.IO;
 
+
 namespace LuaFramework {
     public class GameManager : Manager {
         protected static bool initialize = false;
@@ -22,27 +23,11 @@ namespace LuaFramework {
         /// 初始化
         /// </summary>
         void Init() {
-            if (AppConst.ExampleMode) {
-                InitGui();
-            }
             DontDestroyOnLoad(gameObject);  //防止销毁自己
 
             CheckExtractResource(); //释放资源
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             Application.targetFrameRate = AppConst.GameFrameRate;
-        }
-
-        /// <summary>
-        /// 初始化GUI
-        /// </summary>
-        public void InitGui() {
-            string name = "GUI";
-            GameObject gui = GameObject.Find(name);
-            if (gui != null) return;
-
-            GameObject prefab = Util.LoadPrefab(name);
-            gui = Instantiate(prefab) as GameObject;
-            gui.name = name;
         }
 
         /// <summary>
@@ -70,9 +55,8 @@ namespace LuaFramework {
             if (File.Exists(outfile)) File.Delete(outfile);
 
             string message = "正在解包文件:>files.txt";
-            Debug.Log(message);
-            facade.SendMessageCommand(NotiConst.UPDATE_MESSAGE, message);
-
+            Debug.Log(infile);
+            Debug.Log(outfile);
             if (Application.platform == RuntimePlatform.Android) {
                 WWW www = new WWW(infile);
                 yield return www;
@@ -116,10 +100,9 @@ namespace LuaFramework {
             }
             message = "解包完成!!!";
             facade.SendMessageCommand(NotiConst.UPDATE_MESSAGE, message);
-
             yield return new WaitForSeconds(0.1f);
-            message = string.Empty;
 
+            message = string.Empty;
             //释放完成，开始启动更新资源
             StartCoroutine(OnUpdateResource());
         }
@@ -128,14 +111,13 @@ namespace LuaFramework {
         /// 启动更新下载，这里只是个思路演示，此处可启动线程下载更新
         /// </summary>
         IEnumerator OnUpdateResource() {
-            downloadFiles.Clear();
-
             if (!AppConst.UpdateMode) {
-                ResManager.initialize(OnResourceInited);
+                OnResourceInited();
                 yield break;
             }
             string dataPath = Util.DataPath;  //数据目录
             string url = AppConst.WebUrl;
+            string message = string.Empty;
             string random = DateTime.Now.ToString("yyyymmddhhmmss");
             string listUrl = url + "files.txt?v=" + random;
             Debug.LogWarning("LoadUpdate---->>>" + listUrl);
@@ -149,11 +131,9 @@ namespace LuaFramework {
                 Directory.CreateDirectory(dataPath);
             }
             File.WriteAllBytes(dataPath + "files.txt", www.bytes);
-
             string filesText = www.text;
             string[] files = filesText.Split('\n');
 
-            string message = string.Empty;
             for (int i = 0; i < files.Length; i++) {
                 if (string.IsNullOrEmpty(files[i])) continue;
                 string[] keyValue = files[i].Split('|');
@@ -163,7 +143,7 @@ namespace LuaFramework {
                 if (!Directory.Exists(path)) {
                     Directory.CreateDirectory(path);
                 }
-                string fileUrl = url + keyValue[0] + "?v=" + random;
+                string fileUrl = url + f + "?v=" + random;
                 bool canUpdate = !File.Exists(localfile);
                 if (!canUpdate) {
                     string remoteMd5 = keyValue[1].Trim();
@@ -182,17 +162,23 @@ namespace LuaFramework {
                         yield break;
                     }
                     File.WriteAllBytes(localfile, www.bytes);
-                     * */
+                     */
                     //这里都是资源文件，用线程下载
                     BeginDownload(fileUrl, localfile);
                     while (!(IsDownOK(localfile))) { yield return new WaitForEndOfFrame(); }
                 }
             }
             yield return new WaitForEndOfFrame();
+
             message = "更新完成!!";
             facade.SendMessageCommand(NotiConst.UPDATE_MESSAGE, message);
 
-            ResManager.initialize(OnResourceInited);
+            OnResourceInited();
+        }
+
+        void OnUpdateFailed(string file) {
+            string message = "更新失败!>" + file;
+            facade.SendMessageCommand(NotiConst.UPDATE_MESSAGE, message);
         }
 
         /// <summary>
@@ -206,7 +192,7 @@ namespace LuaFramework {
         /// 线程下载
         /// </summary>
         void BeginDownload(string url, string file) {     //线程下载
-            object[] param = new object[2] {url, file};
+            object[] param = new object[2] { url, file };
 
             ThreadEvent ev = new ThreadEvent();
             ev.Key = NotiConst.UPDATE_DOWNLOAD;
@@ -221,30 +207,37 @@ namespace LuaFramework {
         void OnThreadCompleted(NotiData data) {
             switch (data.evName) {
                 case NotiConst.UPDATE_EXTRACT:  //解压一个完成
-                    //
+                //
                 break;
                 case NotiConst.UPDATE_DOWNLOAD: //下载一个完成
-                    downloadFiles.Add(data.evParam.ToString());
+                downloadFiles.Add(data.evParam.ToString());
                 break;
             }
-        }
-
-        void OnUpdateFailed(string file) {
-            string message = "更新失败!>" + file;
-            facade.SendMessageCommand(NotiConst.UPDATE_MESSAGE, message);
         }
 
         /// <summary>
         /// 资源初始化结束
         /// </summary>
         public void OnResourceInited() {
-            LuaManager.InitStart();
-            LuaManager.DoFile("Logic/Game");            //加载游戏
-            LuaManager.DoFile("Logic/Network");         //加载网络
-            NetManager.OnInit();                        //初始化网络
+#if ASYNC_MODE
+            ResManager.Initialize(AppConst.AssetDir, delegate() {
+                Debug.Log("Initialize OK!!!");
+                this.OnInitialize();
+            });
+#else
+            ResManager.Initialize();
+            this.OnInitialize();
+#endif
+        }
 
-            Util.CallMethod("Game", "OnInitOK");          //初始化完成
-            initialize = true;                          //初始化完 
+        void OnInitialize() {
+            LuaManager.InitStart();
+            LuaManager.DoFile("Logic/Game");         //加载游戏
+            LuaManager.DoFile("Logic/Network");      //加载网络
+            NetManager.OnInit();                     //初始化网络
+            Util.CallMethod("Game", "OnInitOK");     //初始化完成
+
+            initialize = true;
 
             //类对象池测试
             var classObjPool = ObjPoolManager.CreatePool<TestObjectClass>(OnPoolGetElement, OnPoolPushElement);

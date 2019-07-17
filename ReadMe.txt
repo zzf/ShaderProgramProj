@@ -1,22 +1,31 @@
 ﻿项目开源免费，求上面点星支持(star ^o^)
 
-本框架工程基于Unity 5.0/4.6.2 + NGUI 3.8.2 + tolua构建
+本框架工程基于Unity 5.0 + UGUI + tolua构建
 服务器端基于VS2012及其以上版本。
 
 区块链.技术不对称社群成立！QQ群：548924854
 
-支持平台：PC/MAC/Android(armv7-a + Intel x86)/iOS(armv7 + arm64)
-
+支持平台：PC/MAC/Android(arm64 + armv7-a + Intel x86)/iOS(armv7 + arm64)
 
 **资料地址**<br>
 框架文档地址 http://doc.ulua.org/
-网盘下载地址 http://pan.baidu.com/s/1bcP9qY
+网盘下载地址 http://pan.baidu.com/s/1nu59wzJ
 tolua#地址： https://github.com/topameng/tolua
 框架底层库:  https://github.com/jarjin/tolua_rumtime
 服务器框架:  https://github.com/jarjin/ServerFramework
 XlsxToLua:   https://github.com/zhangqi-ulua/XlsxToLua
 UnityHello:  https://github.com/woshihuo12/UnityHello
-Excel配置：https://github.com/sy-yanghuan/proton 
+Excel配置：https://github.com/sy-yanghuan/proton
+
+//-------------2019-05-23 Update by MeniscusLight-------------
+Unity5.3之后,AssetBundle.CreateFromMemoryImmediate升级为AssetBundle.LoadFromMemory, 如有需要请自行取消注释
+
+//-------------2019-05-23 Update by MeniscusLight-------------
+(1)导入LiteNetLib网络库（详情见README.md）
+
+//-------------2019-05-22 Update by MeniscusLight-------------
+(1)跟进最新的tolua
+(2)支持android arm64
 
 //-------------2018-05-26-------------
 (1)更新tolua#到May 21, 2018版
@@ -45,7 +54,7 @@ Excel配置：https://github.com/sy-yanghuan/proton
 
 //-------------2017-08-07-------------
 (1)修复LuaManager.DoFile的BUG。
-(2)重新编译最新版sproto，请替换对应目录即可 
+(2)重新编译最新版sproto，请替换对应目录即可。
 
 //-------------2017-08-05-------------
 (1)更新tolua#到1.0.7.356版
@@ -89,7 +98,7 @@ Excel配置：https://github.com/sy-yanghuan/proton
 //-------------2017-06-20-------------
 (1)更新tolua#到1.0.6.312版
 
-//-------------2017-04-24-------------
+//-------------2017-04-18-------------
 (1)修复LuaClient.cs里在大于Unity5.3版本的命名空间报错。
 (2)修复ToLuaExport.cs里Light.lightmapBakeType报错。
 
@@ -143,7 +152,8 @@ Excel配置：https://github.com/sy-yanghuan/proton
 
 //-------------2016-07-16-------------
 (1)更新tolua#到1.0.5.208版
-(2)添加对象池管理器，可管理类对象+资源游戏对象
+(2)修改资源管理器，减少GC与修正卸载某个AB正处于异步加载中导致崩溃的BUG
+(3)添加对象池管理器，可管理类对象+资源游戏对象
 
 //-------------2016-07-08-------------
 (1)更新tolua#到1.0.5.205版
@@ -164,7 +174,7 @@ Excel配置：https://github.com/sy-yanghuan/proton
 (1)更新tolua#到1.0.5.176版
 
 //-------------2016-05-07-------------
-(1)更新tolua#到1.0.5.152版
+(1)更新tolua#到1.0.5.152版 
 
 //-------------2016-04-17-------------
 (1)更新tolua#到1.0.4.126版
@@ -180,7 +190,7 @@ Excel配置：https://github.com/sy-yanghuan/proton
 (1)更新tolua#到1.0.4.102版
 
 //-------------2016-03-21-------------
-(1)更新tolua#到1.04版
+(1)更新tolua#到1.04.80版
 
 //-------------2016-03-15-------------
 (1)添加-fembed-bitcode标记支持BITCODE_MODE
@@ -195,8 +205,8 @@ Excel配置：https://github.com/sy-yanghuan/proton
 //-------------2016-02-28-------------
 (1)修复ByteBuffer.cs的WriteBuffer函数
 
-//-------------2016-02-21-------------
-(1)修复Load lua file failed: tolua.lua
+//-------------2016-02-13-------------
+(1)重写资源管理器的异步加载模式，原来基于官方DEMO的版本在Lua跟c#同时请求同一份素材会存在加载BUG。
 
 //-------------2016-01-31-------------
 (1)简化框架加载流程。
@@ -210,10 +220,6 @@ Excel配置：https://github.com/sy-yanghuan/proton
 //-------------2016-01-29-------------
 (1)同步tolua #1.0.2版本。
 
-//-------------2016-01-25-------------
-(1)修复资源管理器扩展名BUG。
-(2)修复LuaBundle模式下面在Unity5下面无法加载bug。
-
 //-------------2016-01-24-------------
 (1)修复逻辑小bug，添加移除单击监听。
 
@@ -222,4 +228,4 @@ Excel配置：https://github.com/sy-yanghuan/proton
 (2)同步tolua #1.0.1版本。
 
 //-------------2016-01-18-------------
-(1)框架直接基于tolua#提供的luabundle功能，开关在AppConst.LuaBundleMode。
+(1)框架直接基于tolua#提供的luabundle功能，开关在AppConst.LuabundleMode。

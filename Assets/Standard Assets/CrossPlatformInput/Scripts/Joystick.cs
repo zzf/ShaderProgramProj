@@ -70,39 +70,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 		}
 
-        public void Update()
-        {
-            if( !Application.isEditor)
-            {
-                if(Input.touchCount == 1)
-                {
-                    if(Input.GetTouch(0).phase == TouchPhase.Moved)
-                    {
-                        Vector3 touch_pos = Input.GetTouch(0).position;
-                        Vector3 newPos = Vector3.zero;
 
-                        if (m_UseX)
-                        {
-                            int delta = (int)(touch_pos.x - m_StartPos.x);
-                            delta = Mathf.Clamp(delta, -MovementRange, MovementRange);
-                            newPos.x = delta;
-                        }
-
-                        if (m_UseY)
-                        {
-                            int delta = (int)(touch_pos.y - m_StartPos.y);
-                            delta = Mathf.Clamp(delta, -MovementRange, MovementRange);
-                            newPos.y = delta;
-                        }
-                        transform.position = new Vector3(m_StartPos.x + newPos.x, m_StartPos.y + newPos.y, m_StartPos.z + newPos.z);
-                        UpdateVirtualAxes(transform.position);
-                    }
-                }
-            }
-        }
-
-
-        public void OnDrag(PointerEventData data)
+		public void OnDrag(PointerEventData data)
 		{
 			Vector3 newPos = Vector3.zero;
 
