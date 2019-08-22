@@ -62,8 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AssetBundle\Editor\BuildMenu.cs" />
-    <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
-    <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenPreviewManager.cs" />
     <Compile Include="Assets\Editor\Test.cs" />
     <Compile Include="Assets\Editor\Tools\ExportPackages.cs" />
     <Compile Include="Assets\LuaFramework\Editor\CustomSettings.cs" />
@@ -102,27 +100,26 @@
     <Compile Include="Assets\Runtime Transform Gizmos\Editor\SceneGizmoInspectorGUI.cs" />
     <Compile Include="Assets\Runtime Transform Gizmos\Editor\TranslationGizmoInspectorGUI.cs" />
     <Compile Include="Assets\Runtime Transform Gizmos\Editor\VolumeScaleGizmoInspectorGUI.cs" />
-    <None Include="Assets\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
     <Reference Include="Assembly-UnityScript">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Editor">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Editor.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Editor.dll</HintPath>
     </Reference>
     <Reference Include="XiaomiSupport">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -371,13 +368,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="CString">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Plugins/CString.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Assets/Plugins/CString.dll</HintPath>
     </Reference>
     <Reference Include="Debugger">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Plugins/Debugger.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Assets/Plugins/Debugger.dll</HintPath>
     </Reference>
     <Reference Include="GameLogger">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Plugins/GameLogger.dll</HintPath>
+      <HintPath>E:/GitHubRes/ShaderProgramProj/Assets/Plugins/GameLogger.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/admin/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -402,24 +399,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenProEditor">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiLib">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiEditor">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenPro">
-      <HintPath>D:/GitHubRes/ShaderProgramProj/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
